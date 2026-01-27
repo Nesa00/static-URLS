@@ -85,7 +85,7 @@ class LinksGraph {
         return response.json();
       })
       .then(data => {
-        this.data = data.savedUrls;
+        this.data = data;
         this.startLevel = this.getStartLevel();
         this.setupLevelInput();
         this.renderGraph();
@@ -116,56 +116,102 @@ class LinksGraph {
     localStorage.setItem('startLevel', val);
   }
 
+  treeSearch(data,level) {
+    
+    Object.entries(data).forEach(([key, value], idx) => {
+      // console.log(typeof value)
+      // console.log(level, key)
+      // if 
+      if (level === this.startLevel) {
+        console.log(level,key)
+      }
+
+      if (typeof value === 'object') {
+        let x = level + 1
+        this.treeSearch(value,x)
+      } else if (typeof value === 'string') {
+        // console.log(value)
+      }
+        // if (!Array.isArray(value)) {
+        //   // console.log(key)
+        //   this.treeSearch(value)
+        // } 
+        // // else if (typeof value === 'object' && value !== null) { 
+        // //   this.treeSearch(value)
+        // // }
+        // else {
+        //   // console.log(Array.isArray(value))
+        //   // console.log(typeof obj)
+        // }
+        
+      });
+    }
+
+
   buildGraphData(data, startLevel = 0) {
     const nodes = [];
     const edges = [];
     const rootId = 'root_links';
 
-    if (startLevel === 0) {
-      nodes.push({ id: rootId, label: 'Links', shape: 'circle', color: '#218838', font: { color: '#fff', size: 32 }, size: 60 });
-      traverse(data, null, '', 1);
-    } else {
-      Object.entries(data).forEach(([key, value], idx) => {
-        traverse(value, null, key + '_', 1);
-      });
+    // if (startLevel === 0) {
+    //   // nodes.push({ id: rootId, label: 'Links', shape: 'circle', color: '#218838', font: { color: '#fff', size: 32 }, size: 60 });
+    //   traverse(data, null, '', 1);
+    // } else {
+    //   Object.entries(data).forEach(([key, value], idx) => {
+    //     traverse(value, null, key + '_', 1);
+    //   });
+
+    
+
+    // Object.entries(data).forEach(([key, value], idx) => {
+    //       // console.log(key,value)
+    //       console.log(Array.isArray(value))
+    //     });
+    console.log("start level:",this.startLevel)
+    this.treeSearch(data,0);
+    
+    
     }
 
-    function traverse(obj, parent, prefix, level) {
-      if (Array.isArray(obj)) {
-        obj.forEach((item, idx) => {
-          const thisId = prefix + 'l' + idx + '_' + Math.random().toString(36).substr(2, 5);
-          nodes.push({
-            id: thisId,
-            label: item.title || item.url,
-            shape: 'box',
-            color: '#b2ecc0',
-            url: item.url,
-            hover: item.hover || item.url,
-            size: Math.max(12, 36 - level * 8)
-          });
-          if (parent) edges.push({ from: parent, to: thisId });
-        });
-      } else if (typeof obj === 'object' && obj !== null) {
-        Object.entries(obj).forEach(([key, value], idx) => {
-          const thisId = prefix + 'c' + idx + '_' + Math.random().toString(36).substr(2, 5);
-          nodes.push({
-            id: thisId,
-            label: key,
-            shape: 'ellipse',
-            color: '#28a745',
-            size: Math.max(12, 48 - level * 12)
-          });
-          if (parent) {
-            edges.push({ from: parent, to: thisId });
-          } else if (startLevel === 0) {
-            edges.push({ from: rootId, to: thisId });
-          }
-          traverse(value, thisId, thisId + '_', level + 1);
-        });
-      }
-    }
-    return { nodes, edges };
-  }
+
+
+  //   function traverse(obj, parent, prefix, level) {
+  //     console.log(level)
+  //     if (Array.isArray(obj)) {
+  //       obj.forEach((item, idx) => {
+  //         const thisId = prefix + 'l' + idx + '_' + Math.random().toString(36).substr(2, 5);
+  //         nodes.push({
+  //           id: thisId,
+  //           label: item.title || item.url,
+  //           shape: 'box',
+  //           color: '#b2ecc0',
+  //           url: item.url,
+  //           hover: item.hover || item.url,
+  //           size: Math.max(12, 36 - level * 8)
+  //         });
+  //         if (parent) edges.push({ from: parent, to: thisId });
+  //       });
+  //     } else if (typeof obj === 'object' && obj !== null) {
+  //       Object.entries(obj).forEach(([key, value], idx) => {
+  //         const thisId = prefix + 'c' + idx + '_' + Math.random().toString(36).substr(2, 5);
+  //         nodes.push({
+  //           id: thisId,
+  //           label: key,
+  //           shape: 'ellipse',
+  //           color: '#28a745',
+  //           size: Math.max(12, 48 - level * 12)
+  //         });
+  //         if (parent) {
+  //           edges.push({ from: parent, to: thisId });
+  //         } else if (startLevel === 0) {
+  //           edges.push({ from: rootId, to: thisId });
+  //         }
+  //         traverse(value, thisId, thisId + '_', level + 1);
+  //       });
+  //     }
+  //   }
+  //   return { nodes, edges };
+  // }
 
   renderGraph() {
     if (!this.graphContainer || !this.data) return;
@@ -192,6 +238,9 @@ class LinksGraph {
     });
   }
 }
+
+
+    
 
 window.addEventListener('DOMContentLoaded', () => {
   new LinksGraph();
