@@ -1,160 +1,198 @@
-const savedUrlsData = { // Assuming you have this data
-    "savedUrls": {
-      "Tips & tricks": {
-        "Other" : [
-          {"title": "Windows shell tips", "url": "https://wintip.cz/3800-kompletni-seznam-shell-prikazu-pro-windows-10"},
-          {"title": "Proxmox cheat sheet", "url": "https://tteck.github.io/Proxmox/"},
-        ],
-        "Tutorial" : [
-          {"title": "Linux tutorial", "url": "https://www.tutorialspoint.com/unix/index.htm"},
-          {"title": "Python tutorial", "url": "https://www.w3schools.com/python/default.asp"},
-          {"title": "Tutorial point", "url": "https://www.tutorialspoint.com/"},
-          {"title": "Git tutorial", "url": "https://www.atlassian.com/git/tutorials/what-is-version-control"},
-        ],
-        "Learning" : [
-          {"title": "Markdown tutorial", "url": "https://www.markdowntutorial.com/"},
-          {"title": "Linux Journey", "url": "https://linuxjourney.com/"},
-          {"title": "Learn Git", "url": "https://learngitbranching.js.org/"},
-          {"title": "Learn Regex", "url": "https://regexone.com/"},
-          {"title": "Learn Markdown", "url": "https://commonmark.org/help/tutorial/"},
-          {"title": "ryanstutorials", "url": "https://ryanstutorials.net/"},
-        ],
+
+class LinksGraph {
+  constructor(options = {}) {
+    this.graphStyle = {
+      layout: { hierarchical: false },
+      nodes: {
+        font: { color: '#222', size: 20, face: 'Segoe UI, Arial, sans-serif', strokeWidth: 0 },
+        borderWidth: 2,
+        borderWidthSelected: 4,
+        color: {
+          border: '#28a745',
+          background: '#b2ecc0',
+          highlight: {
+            border: '#218838',
+            background: '#d9fce1'
+          },
+          hover: {
+            border: '#218838',
+            background: '#d9fce1'
+          }
+        },
+        shape: 'dot',
+        size: 32,
+        shadow: {
+          enabled: true,
+          color: 'rgba(40,167,69,0.35)',
+          size: 18,
+          x: 0,
+          y: 4
+        }
       },
-      "Tools": {
-        "Text": [
-          { "title": "Patrojk", "hover": "Patrojk - Ascii art and random stuff" , "url": "https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20" },
-          { "title": "Lorem ipsum", "url": "https://www.lipsum.com/" },
-          { "title": "Hipster ipsum", "url": "https://hipsum.co/" },
-          { "title": "Markdown editor", "url": "https://pandao.github.io/editor.md/en.html" },
-
-              ],
-              "Picture": [
-                { "title": "Convertio", "hover": "Picture format converter" , "url": "https://convertio.co/png-ico/" },
-                { "title": "Random photo", "url": "https://picsum.photos/" },
-                { "title": "Remove BG", "url": "https://www.remove.bg/" },
-                { "title": "Picture analysis", "url": "https://exifdata.com/index.php" },
-                { "title": "Image Editor", "url": "https://www.iloveimg.com/" },
-                { "title": "Color inverter", "url": "https://pinetools.com/invert-image-colors" },
-              ],
-              "Color": [
-                { "title": "HTML Color codes","url": "https://htmlcolorcodes.com/" },
-                { "title": "Color picker","url": "https://imagecolorpicker.com/" },
-                { "title": "Color contrast test","url": "https://coolors.co/contrast-checker/cbcbcb-000000" },
-              ],
-              "Multi": [
-                { "title": "Multi editor", "url": "https://photo333.com/" },
-                { "title": "Image to excel", "url": "https://www.table-reader.com/image-to-excel" },
-                { "title": "Pinetools", "url": "https://pinetools.com" },
-                { "title": "Patorjk", "url": "https://patorjk.com" },
-                { "title": "AI rewriter", "url": "https://undetectable.ai/?via=36ovg&fp_sid=aicheck" },
-                { "title": "Useles Web", "url": "https://theuselessweb.com/" },
-              ],
-              "3D": [
-                { "title": "3D model viewer", "url": "https://3dviewer.net/" },
-                { "title": "3D model converter", "url": "https://anyconv.com/stl-to-obj-converter/" },
-                { "title": "Tinkercad", "hover": "Tinkercad - 3D model editor", "url": "https://www.tinkercad.com/" },
-                { "title": "Onshape", "url": "https://www.onshape.com/" },
-                { "title": "Thingiverse","hover":"3D model market" , "url": "https://www.thingiverse.com/" },
-                { "title": "Printables","hover":"3D model market" , "url": "https://www.printables.com/" },
-                { "title": "cults3d","hover":"3D model market" , "url": "https://cults3d.com/" },
-              ],
-              "Diagram": [
-                { "title": "Draw.io", "url": "https://app.diagrams.net/" },
-                { "title": "Lucidchart", "url": "https://www.lucidchart.com/pages/" },
-                { "title": "Mindmeister", "url": "https://www.mindmeister.com/" },
-                { "title": "Mindomo", "url": "https://www.mindomo.com/" },
-                { "title": "Mind42", "url": "https://mind42.com/" },
-                { "title": "Coggle", "url": "https://coggle.it/" },
-                { "title": "Mermaid", "url": "https://mermaid.live/" },
-              ],
-              "AI": [
-                { "title": "Chat GPT", "url": "https://chat.openai.com/" },
-                { "title": "Gemini", "url": "https://gemini.google.com/app/ec07d62290e9dd58" },
-                { "title": "MS copilot", "url": "https://copilot.microsoft.com/" },
-          { "title": "Mistral", "url": "https://chat.mistral.ai/chat" },
-          { "title": "Wistron Chat", "hover":"Columbus", "url": "https://columbus.wistron.com/" },
-
-        ],
+      edges: {
+        color: {
+          color: '#28a745',
+          highlight: '#218838',
+          hover: '#218838',
+          inherit: false
+        },
+        width: 2,
+        smooth: {
+          enabled: true,
+          type: 'dynamic'
+        },
+        length: 60,
+        shadow: {
+          enabled: true,
+          color: 'rgba(40,167,69,0.18)',
+          size: 12,
+          x: 0,
+          y: 2
+        },
+        selectionWidth: 4,
+        hoverWidth: 3
       },
-    }
-  };
-  
-const main = document.getElementById('saved-urls');
+      physics: {
+        enabled: true,
+        barnesHut: {
+          gravitationalConstant: -2000,
+          centralGravity: 0.1,
+          springLength: 20,
+          springConstant: 0.03,
+          damping: 0.18, 
+          avoidOverlap: 0.5
+        }
+      },
+      interaction: { hover: true, tooltipDelay: 100 }
+    };
+    this.data = null;
+    this.startLevel = 0;
+    this.levelInput = document.getElementById('levelInput');
+    this.graphContainer = document.getElementById('graph');
+    this.init();
+  }
 
-function createUrlList(category, subcategories) {
-  const box = document.createElement('div')
-  box.className = "box"
-  
-  main.appendChild(box)
-  const categoryHeader = document.createElement('h2');
-  categoryHeader.textContent = category;
-  box.appendChild(categoryHeader);
+  init() {
+    this.fetchData();
+  }
 
-  
-  const sticky = document.createElement('div')
-  sticky.id = category;
-  sticky.style.display = 'none';
-
-  box.addEventListener('click', () => {
-
-    if (sticky.style.display === 'none') {
-        sticky.style.display = 'block'; 
-    } else {
-        sticky.style.display = 'none'; 
-    }
-  });
-  box.addEventListener('mouseover', () => {
-      box.style.backgroundColor = "#d9fce1"; // Light green on hover
-  });
-
-  box.addEventListener('mouseout', () => {
-      box.style.backgroundColor = "#88d399"; // Original color when not hovered
-  });
-  
-  box.appendChild(sticky)
-
-  Object.entries(subcategories).forEach(([subCategory, urls]) => {
-    const urlList = document.createElement('li');
-    urlList.classList.add('list-group-item');
-
-    const subCategoryHeader = document.createElement('h4');
-    subCategoryHeader.textContent = subCategory;
-    urlList.appendChild(subCategoryHeader);
-
-    const urlItems = document.createElement('ul');
-
-    urlList.appendChild(urlItems);
-    sticky.appendChild(urlList);
-    urlItems.classList.add('list-group');
-
-    urls.forEach(url => {
-      const urlButton = document.createElement('button');
-      urlButton.classList.add('btn', 'btn-outline-primary', 'btn-sm', 'px-3');
-      urlButton.textContent = url.title || url.url;
-      // urlButton.title = url.title || url.url; // Set full title for hover text
-      urlButton.title = url.hover || url.title || url.url;
-      urlButton.addEventListener('click', () => {
-        // open in new tab 
-        window.open(url.url, '_blank'); 
-
+  fetchData() {
+    fetch('links.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Network error');
+        return response.json();
+      })
+      .then(data => {
+        this.data = data.savedUrls;
+        this.startLevel = this.getStartLevel();
+        this.setupLevelInput();
+        this.renderGraph();
+      })
+      .catch(error => {
+        if (this.graphContainer) this.graphContainer.textContent = 'Failed to load links.';
+        console.error('Error loading links.json:', error);
       });
-      urlButton.addEventListener('mouseover', () => {
-        // const c1 = document.getElementById('copy-context')
-        // c1.textContent = url.title;
-        // urlButton.style.color = "white";
-        urlButton.style.backgroundColor = "#28a745";
-        });
-      urlButton.addEventListener('mouseout', () => {
-        urlButton.style.backgroundColor = "";
-      });
+  }
 
-      urlItems.appendChild(urlButton);
+  setupLevelInput() {
+    if (!this.levelInput) return;
+    this.levelInput.value = this.startLevel;
+    this.levelInput.addEventListener('change', () => {
+      const val = Math.max(0, parseInt(this.levelInput.value, 10) || 0);
+      this.setStartLevel(val);
+      this.startLevel = val;
+      this.renderGraph();
     });
+  }
 
-  });
+  getStartLevel() {
+    const stored = localStorage.getItem('startLevel');
+    return stored !== null ? parseInt(stored, 10) : 0;
+  }
+
+  setStartLevel(val) {
+    localStorage.setItem('startLevel', val);
+  }
+
+  buildGraphData(data, startLevel = 0) {
+    const nodes = [];
+    const edges = [];
+    const rootId = 'root_links';
+
+    if (startLevel === 0) {
+      nodes.push({ id: rootId, label: 'Links', shape: 'circle', color: '#218838', font: { color: '#fff', size: 32 }, size: 60 });
+      traverse(data, null, '', 1);
+    } else {
+      Object.entries(data).forEach(([key, value], idx) => {
+        traverse(value, null, key + '_', 1);
+      });
+    }
+
+    function traverse(obj, parent, prefix, level) {
+      if (Array.isArray(obj)) {
+        obj.forEach((item, idx) => {
+          const thisId = prefix + 'l' + idx + '_' + Math.random().toString(36).substr(2, 5);
+          nodes.push({
+            id: thisId,
+            label: item.title || item.url,
+            shape: 'box',
+            color: '#b2ecc0',
+            url: item.url,
+            hover: item.hover || item.url,
+            size: Math.max(12, 36 - level * 8)
+          });
+          if (parent) edges.push({ from: parent, to: thisId });
+        });
+      } else if (typeof obj === 'object' && obj !== null) {
+        Object.entries(obj).forEach(([key, value], idx) => {
+          const thisId = prefix + 'c' + idx + '_' + Math.random().toString(36).substr(2, 5);
+          nodes.push({
+            id: thisId,
+            label: key,
+            shape: 'ellipse',
+            color: '#28a745',
+            size: Math.max(12, 48 - level * 12)
+          });
+          if (parent) {
+            edges.push({ from: parent, to: thisId });
+          } else if (startLevel === 0) {
+            edges.push({ from: rootId, to: thisId });
+          }
+          traverse(value, thisId, thisId + '_', level + 1);
+        });
+      }
+    }
+    return { nodes, edges };
+  }
+
+  renderGraph() {
+    if (!this.graphContainer || !this.data) return;
+    const graphData = this.buildGraphData(this.data, this.startLevel);
+    const nodes = new vis.DataSet(graphData.nodes);
+    const edges = new vis.DataSet(graphData.edges);
+    const network = new vis.Network(this.graphContainer, { nodes, edges }, this.graphStyle);
+    network.on('click', function (params) {
+      if (params.nodes.length > 0) {
+        const node = nodes.get(params.nodes[0]);
+        if (node.url) {
+          window.open(node.url, '_blank');
+        }
+      }
+    });
+    network.on('hoverNode', function(params) {
+      const node = nodes.get(params.node);
+      if (node && (node.hover || node.url)) {
+        network.body.container.title = node.hover || node.url;
+      }
+    });
+    network.on('blurNode', function(params) {
+      network.body.container.title = '';
+    });
+  }
 }
 
-Object.entries(savedUrlsData.savedUrls).forEach(([category, subcategories]) => {
-  createUrlList(category, subcategories);
+// Initialize the class on page load
+window.addEventListener('DOMContentLoaded', () => {
+  new LinksGraph();
 });
-  
+
