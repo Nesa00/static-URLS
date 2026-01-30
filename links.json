@@ -1,106 +1,144 @@
 {
-  "Links": {
-    "Tips & tricks": {
-      "Other": [
-        {"title": "Windows shell tips", "url": "https://wintip.cz/3800-kompletni-seznam-shell-prikazu-pro-windows-10"},
-        {"title": "Proxmox cheat sheet", "url": "https://tteck.github.io/Proxmox/"}
-      ],
-      "Tutorial": [
-        {"title": "Linux tutorial", "url": "https://www.tutorialspoint.com/unix/index.htm"},
-        {"title": "Python tutorial", "url": "https://www.w3schools.com/python/default.asp"},
-        {"title": "Tutorial point", "url": "https://www.tutorialspoint.com/"},
-        {"title": "Git tutorial", "url": "https://www.atlassian.com/git/tutorials/what-is-version-control"}
-      ],
-      "Learning": [
-        {"title": "Markdown tutorial", "url": "https://www.markdowntutorial.com/"},
-        {"title": "Linux Journey", "url": "https://linuxjourney.com/"},
-        {"title": "Learn Git", "url": "https://learngitbranching.js.org/"},
-        {"title": "Learn Regex", "url": "https://regexone.com/"},
-        {"title": "Learn Markdown", "url": "https://commonmark.org/help/tutorial/"},
-        {"title": "ryanstutorials", "url": "https://ryanstutorials.net/"}
-      ],
-      "Deep Nest Example": {
-        "Frontend": {
-          "Frameworks": {
-            "React": [
-              {"title": "React Docs", "url": "https://react.dev/"},
-              {"title": "React Router", "url": "https://reactrouter.com/"}
-            ],
-            "Vue": [
-              {"title": "Vue Docs", "url": "https://vuejs.org/"}
-            ]
-          },
-          "CSS": [
-            {"title": "MDN CSS", "url": "https://developer.mozilla.org/en-US/docs/Web/CSS"}
-          ]
-        },
-        "Backend": {
-          "Node.js": [
-            {"title": "Node.js Docs", "url": "https://nodejs.org/en/docs/"}
-          ],
-          "Python": {
-            "Django": [
-              {"title": "Django Docs", "url": "https://docs.djangoproject.com/"}
-            ],
-            "Flask": [
-              {"title": "Flask Docs", "url": "https://flask.palletsprojects.com/"}
-            ]
-          }
-        }
-      }
-    },
-    "Tools": {
-      "Text": [
-        {"title": "Patrojk", "hover": "Patrojk - Ascii art and random stuff", "url": "https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20"},
-        {"title": "Lorem ipsum", "url": "https://www.lipsum.com/"},
-        {"title": "Hipster ipsum", "url": "https://hipsum.co/"},
-        {"title": "Markdown editor", "url": "https://pandao.github.io/editor.md/en.html"}
-      ],
-      "Picture": [
-        {"title": "Convertio", "hover": "Picture format converter", "url": "https://convertio.co/png-ico/"},
-        {"title": "Random photo", "url": "https://picsum.photos/"},
-        {"title": "Remove BG", "url": "https://www.remove.bg/"},
-        {"title": "Picture analysis", "url": "https://exifdata.com/index.php"},
-        {"title": "Image Editor", "url": "https://www.iloveimg.com/"},
-        {"title": "Color inverter", "url": "https://pinetools.com/invert-image-colors"}
-      ],
-      "Color": [
-        {"title": "HTML Color codes", "url": "https://htmlcolorcodes.com/"},
-        {"title": "Color picker", "url": "https://imagecolorpicker.com/"},
-        {"title": "Color contrast test", "url": "https://coolors.co/contrast-checker/cbcbcb-000000"}
-      ],
-      "Multi": [
-        {"title": "Multi editor", "url": "https://photo333.com/"},
-        {"title": "Image to excel", "url": "https://www.table-reader.com/image-to-excel"},
-        {"title": "Pinetools", "url": "https://pinetools.com"},
-        {"title": "Patorjk", "url": "https://patorjk.com"},
-        {"title": "AI rewriter", "url": "https://undetectable.ai/?via=36ovg&fp_sid=aicheck"},
-        {"title": "Useles Web", "url": "https://theuselessweb.com/"}
-      ],
-      "3D": [
-        {"title": "3D model viewer", "url": "https://3dviewer.net/"},
-        {"title": "3D model converter", "url": "https://anyconv.com/stl-to-obj-converter/"},
-        {"title": "Tinkercad", "hover": "Tinkercad - 3D model editor", "url": "https://www.tinkercad.com/"},
-        {"title": "Onshape", "url": "https://www.onshape.com/"},
-        {"title": "Thingiverse", "hover": "3D model market", "url": "https://www.thingiverse.com/"},
-        {"title": "Printables", "hover": "3D model market", "url": "https://www.printables.com/"},
-        {"title": "cults3d", "hover": "3D model market", "url": "https://cults3d.com/"}
-      ],
-      "Diagram": [
-        {"title": "Draw.io", "url": "https://app.diagrams.net/"},
-        {"title": "Lucidchart", "url": "https://www.lucidchart.com/pages/"},
-        {"title": "Mindmeister", "url": "https://www.mindmeister.com/"},
-        {"title": "Mindomo", "url": "https://www.mindomo.com/"},
-        {"title": "Mind42", "url": "https://mind42.com/"},
-        {"title": "Coggle", "url": "https://coggle.it/"},
-        {"title": "Mermaid", "url": "https://mermaid.live/"}
-      ],
-      "AI": [
-        {"title": "Chat GPT", "url": "https://chat.openai.com/"},
+"URLS": {
+    "AI" : [
+        {"title": "Chat GPT", "url": "https://chatgpt.com/"},
         {"title": "Gemini", "url": "https://gemini.google.com/app/ec07d62290e9dd58"},
         {"title": "MS copilot", "url": "https://copilot.microsoft.com/"},
         {"title": "Mistral", "url": "https://chat.mistral.ai/chat"},
-        {"title": "Wistron Chat", "hover": "Columbus", "url": "https://columbus.wistron.com/"}
+        {"title": "AI rewriter", "url": "https://undetectable.ai/?via=36ovg&fp_sid=aicheck"}
+      ],
+    "IT": {
+      "Operating Systems": {
+        "Windows": {
+          "PowerShell" : [
+            {"title": "Windows shell tips", "url": "https://wintip.cz/3800-kompletni-seznam-shell-prikazu-pro-windows-10"}
+          ],
+          "Batch" : [
+            {"title": "Batch commands", "url": "https://ss64.com/nt/"},
+            {"title": "Batch scripting", "url": "https://www.tutorialspoint.com/batch_script/index.htm"},
+            {"title": "Batch cheat sheet", "url": "https://cheatography.com/davechild/cheat-sheets/batch/pdf/"},
+            {"title": "Batch scripting guide", "url": "https://www.computerhope.com/batch.htm"}
+          ]
+        },
+        "Linux" : [
+          {"title": "linux Journey", "url": "https://labex.io/linuxjourney"},
+          {"title": "Linux tutorial", "url": "https://www.tutorialspoint.com/unix/index.htm"},
+          {"title": "Linux commands", "url": "https://linuxcommandlibrary.com/"},
+          {"title": "Linux cheat sheet", "url": "https://cheatography.com/davechild/cheat-sheets/linux-command-line/pdf/"},
+          {"Qubern OS": [
+            {"title": "Qubern OS", "url": "https://www.qubes-os.org/"},
+            {"Developers": [
+              {"title": "Developers", "url": "https://invisiblethingslab.com/"},
+              {"Founder Joanna": [
+                {"title": "Joanna Rutkowska", "url": "https://blog.invisiblethings.org/"},
+                {"title": "Joanna Rutkowska", "url": "https://theinvisiblethings.blogspot.com/"},
+                {"title": "Joanna Rutkowska - github", "url": "https://github.com/rootkovska"}
+              ]}
+            ]},
+            {"title": "Xen", "url": "https://xenproject.org/resources/use-cases/"}
+          ]},
+          {"Proxmox VE": [
+            {"title": "Proxmox VE", "url": "https://www.proxmox.com/en/"},
+            {"QEMU" : [
+              {"title": "QEMU", "url": "https://www.qemu.org/"}
+            ]}
+          ]}
+        ]
+      },
+      "Other" : [
+      ],
+      "Learning" : {
+          "Markdown" : [
+          {"title": "Markdown tutorial", "url": "https://www.markdowntutorial.com/"},
+          {"title": "Learn Markdown", "url": "https://commonmark.org/help/tutorial/"}
+        ],
+        "Other" : [
+          {"title": "Learn Regex", "url": "https://regexone.com/"},
+          {"title": "MULTI TUTORIALS", "url": "https://ryanstutorials.net/"},
+          {"title": "Tutorial point", "url": "https://www.tutorialspoint.com/"}
+        ],
+        "Programing" : [
+          {"title": "Codewars", "url": "https://www.codewars.com/"},
+          {"title": "freeCodeCamp", "url": "https://www.freecodecamp.org/learn/"},
+          {"title": "Codecademy", "url": "https://www.codecademy.com/"},
+          {"title": "W3Schools", "url": "https://www.w3schools.com/"},
+          {"title": "The Odin Project", "url": "https://www.theodinproject.com/"},
+          {"title": "Tutorial point", "url": "https://www.tutorialspoint.com/"}
+        ],
+        "Python" : [
+          {"title": "Learn Python", "url": "https://www.learnpython.org/"},
+          {"title": "Python Tutor", "url": "https://pythontutor.com/visualize.html#mode=edit"},
+          {"title": "W3Schools Python", "url": "https://www.w3schools.com/python/default.asp"}
+      ]
+      },
+      "Git" : [
+        {"title": "Visualise git", "url": "https://git-school.github.io/visualizing-git/"},
+        {"title": "Git training", "url": "https://learngitbranching.js.org/"},
+        {"title": "Git beginner guide", "url": "https://www.atlassian.com/git/tutorials/what-is-version-control"},
+        {"Git repositories": {
+          "proxmox-scripts" : [
+            {"title": "Proxmox community scripts", "url": "https://community-scripts.github.io/ProxmoxVE/"},
+            {"title": "Proxmox scripts collection", "url": "https://tteck.github.io/Proxmox/"}
+          ],
+          "Textual User Interface": [
+            {"title": "TUIS", "hover": "Some tui aplications", "url": "https://github.com/rothgar/awesome-tuis?tab=readme-ov-file#file-managers"},
+            {"title": "python tui", "url":"https://github.com/Textualize/textual#"}
+          ]
+        }
+      }]
+    },
+    "Creative Tools & converters": {
+      "Text": {
+        "Editors": [
+          {"title": "StackEdit",  "hover": "Markdown editor" , "url": "https://stackedit.io/app#"},
+          {"title": "Markdown editor", "url": "https://pandao.github.io/editor.md/en.html"},
+          {"title": "Dillinger", "url": "https://dillinger.io/"},
+          {"title": "LaTeX editor", "url": "https://www.overleaf.com/"},
+          {"title": "Latex", "url": "https://prism.openai.com/"}
+        ],
+        "Generators": [
+          {"title": "Lorem ipsum", "url": "https://www.lipsum.com/"},
+          {"title": "Hipster ipsum", "url": "https://hipsum.co/"},
+          {"title": "Patrojk", "hover": "Patrojk - Ascii art and random stuff" , "url": "https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20"}
+        ]
+      },
+      "Picture": [
+        { "title": "Convertio", "hover": "Picture format converter" , "url": "https://convertio.co/png-ico/" },
+        { "title": "Random photo", "url": "https://picsum.photos/" },
+        { "title": "Remove BG", "url": "https://www.remove.bg/" },
+        { "title": "Picture analysis", "url": "https://exifdata.com/index.php" },
+        { "title": "Image Editor", "url": "https://www.iloveimg.com/" },
+        { "title": "Color inverter", "url": "https://pinetools.com/invert-image-colors" }
+      ],
+      "Color": [
+        { "title": "HTML Color codes","url": "https://htmlcolorcodes.com/" },
+        { "title": "Color picker","url": "https://imagecolorpicker.com/" },
+        { "title": "Color contrast test","url": "https://coolors.co/contrast-checker/cbcbcb-000000" }
+      ],
+      "Multi": [
+        { "title": "Multi editor", "url": "https://photo333.com/" },
+        { "title": "Image to excel", "url": "https://jpgtoexcel.com/" },
+        { "title": "Pinetools", "url": "https://pinetools.com" },
+        { "title": "Patorjk", "url": "https://patorjk.com" },
+        { "title": "Useles Web", "url": "https://theuselessweb.com/" }
+      ],
+      "3D Modeling": [
+        { "title": "3D model viewer", "url": "https://3dviewer.net/" },
+        { "title": "3D model converter", "url": "https://anyconv.com/stl-to-obj-converter/" },
+        { "title": "Tinkercad", "hover": "Tinkercad - 3D model editor", "url": "https://www.tinkercad.com/" },
+        { "title": "Onshape", "url": "https://www.onshape.com/" },
+        { "title": "Thingiverse","hover":"3D model market" , "url": "https://www.thingiverse.com/" },
+        { "title": "Printables","hover":"3D model market" , "url": "https://www.printables.com/" },
+        { "title": "cults3d","hover":"3D model market" , "url": "https://cults3d.com/" }
+      ],
+      "Diagram": [
+        { "title": "Draw.io", "url": "https://app.diagrams.net/" },
+        { "title": "Lucidchart", "url": "https://www.lucidchart.com/pages/" },
+        { "title": "Mindmeister", "url": "https://www.mindmeister.com/" },
+        { "title": "Mindomo", "url": "https://www.mindomo.com/" },
+        { "title": "Mind42", "url": "https://mind42.com/" },
+        { "title": "Coggle", "url": "https://coggle.it/" },
+        { "title": "Mermaid", "url": "https://mermaid.live/" }
       ]
     }
   }
