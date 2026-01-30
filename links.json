@@ -5,7 +5,8 @@
         {"title": "Gemini", "url": "https://gemini.google.com/app/ec07d62290e9dd58"},
         {"title": "MS copilot", "url": "https://copilot.microsoft.com/"},
         {"title": "Mistral", "url": "https://chat.mistral.ai/chat"},
-        {"title": "AI rewriter", "url": "https://undetectable.ai/?via=36ovg&fp_sid=aicheck"}
+        {"title": "AI rewriter", "url": "https://undetectable.ai/?via=36ovg&fp_sid=aicheck"},
+        {"title": "Claude", "url": "https://claude.ai/"}
       ],
     "IT": {
       "Operating Systems": {
@@ -87,6 +88,10 @@
         }
       }]
     },
+    "Chats" : [
+      {"title": "Matrix", "url": "https://matrix.org/"},
+      {"title": "SimpleX", "url": "https://simplex.chat/"}
+    ],
     "Creative Tools & converters": {
       "Text": {
         "Editors": [
