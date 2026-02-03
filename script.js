@@ -115,10 +115,8 @@ class LinksGraph {
     localStorage.setItem('startLevel', val);
   }
 
-  // Recursively collect nodes and edges starting from the selected level
   treeSearch(data, level, nodes, edges, parent = null, prefix = '') {
     if (level < this.startLevel) {
-      // Go deeper until we reach the selected startLevel
       Object.entries(data).forEach(([key, value], idx) => {
         if (typeof value === 'object' && value !== null) {
           this.treeSearch(value, level + 1, nodes, edges, null, prefix + key + '_');
@@ -126,9 +124,7 @@ class LinksGraph {
       });
       return;
     }
-      // At the selected level, build the tree from here
       if (typeof data === 'object' && data !== null && data.url) {
-        // If this is an edge, add as box node and return
         const edgeId = (parent || prefix || 'edge') + '_edge_' + Math.random().toString(36).substr(2, 5);
         nodes.push({
           id: edgeId,
@@ -144,7 +140,6 @@ class LinksGraph {
         }
         return;
       }
-    // At the selected level, build the tree from here
     Object.entries(data).forEach(([key, value], idx) => {
       const thisId = prefix + 'c' + idx + '_' + Math.random().toString(36).substr(2, 5);
       nodes.push({
@@ -157,7 +152,6 @@ class LinksGraph {
       if (parent) {
         edges.push({ from: parent, to: thisId });
       }
-      // NEW LOGIC: If value is an array of objects with url, treat as edge list
       if (Array.isArray(value) && value.length > 0 && value.every(item => typeof item === 'object' && item !== null && item.url)) {
         value.forEach((item, idx2) => {
           const leafId = thisId + '_l' + idx2 + '_' + Math.random().toString(36).substr(2, 5);
@@ -173,7 +167,6 @@ class LinksGraph {
           edges.push({ from: thisId, to: leafId });
         });
       } else if (Array.isArray(value)) {
-        // Mixed or nested array: recurse or treat as primitives
         value.forEach((item, idx2) => {
           if (typeof item === 'object' && item !== null) {
             this.treeSearch(item, level + 1, nodes, edges, thisId, thisId + '_');
@@ -200,11 +193,9 @@ class LinksGraph {
     const nodes = [];
     const edges = [];
     if (this.startLevel === 0) {
-      // Use the first key in the JSON as the main entry point
       const entries = Object.entries(data);
       if (entries.length > 0) {
         const [mainKey, mainValue] = entries[0];
-        // If the main value is a single edge (object with url), just display it as a box node
         if (typeof mainValue === 'object' && mainValue !== null && mainValue.url) {
           nodes.push({
             id: 'edge_' + Math.random().toString(36).substr(2, 5),
@@ -229,14 +220,13 @@ class LinksGraph {
             });
           });
         } else {
-          // Otherwise, create a root node as a circle
           const rootId = 'root_' + Math.random().toString(36).substr(2, 5);
           nodes.push({ id: rootId, label: mainKey, shape: 'circle', color: '#218838', font: { color: '#fff', size: 32 }, size: 60 });
-          // For all direct children of the root, connect to rootId
+          
           if (Array.isArray(mainValue)) {
             mainValue.forEach((item, idx) => {
               if (typeof item === 'object' && item !== null && item.url) {
-                // Edge (box)
+                
                 const edgeId = rootId + '_edge_' + idx + '_' + Math.random().toString(36).substr(2, 5);
                 nodes.push({
                   id: edgeId,
@@ -249,14 +239,14 @@ class LinksGraph {
                 });
                 edges.push({ from: rootId, to: edgeId });
               } else if (typeof item === 'object' && item !== null) {
-                // Subtree
+                
                 this.treeSearch(item, 1, nodes, edges, rootId, mainKey + '_');
               }
             });
           } else if (typeof mainValue === 'object' && mainValue !== null) {
             Object.entries(mainValue).forEach(([key, value], idx) => {
               if (typeof value === 'object' && value !== null && value.url) {
-                // Edge (box)
+                
                 const edgeId = rootId + '_edge_' + idx + '_' + Math.random().toString(36).substr(2, 5);
                 nodes.push({
                   id: edgeId,
@@ -269,7 +259,6 @@ class LinksGraph {
                 });
                 edges.push({ from: rootId, to: edgeId });
               } else {
-                // Standard node (ellipse)
                 this.treeSearch({ [key]: value }, 1, nodes, edges, rootId, mainKey + '_');
               }
             });
@@ -277,7 +266,6 @@ class LinksGraph {
         }
       }
     } else {
-      // Only render subtrees rooted at the selected level, not deeper or higher
       const collectLevelNodes = (obj, level, prefix = '') => {
         if (level < this.startLevel) {
           let result = [];
@@ -288,10 +276,8 @@ class LinksGraph {
           });
           return result;
         } else if (level === this.startLevel) {
-          // Only nodes at the selected level
           return Object.entries(obj).map(([key, value], idx) => ({ key, value, prefix: prefix + key + '_' }));
         } else {
-          // Don't go deeper for roots
           return [];
         }
       };
@@ -306,7 +292,6 @@ class LinksGraph {
           font: { color: '#fff', size: 32 },
           size: 48
         });
-        // For all direct children of this branch root, connect to branchRootId
         if (Array.isArray(value)) {
           value.forEach((item, idx2) => {
             if (typeof item === 'object' && item !== null && item.url) {

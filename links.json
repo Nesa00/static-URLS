@@ -40,6 +40,12 @@
           ]},
           {"Proxmox VE": [
             {"title": "Proxmox VE", "url": "https://www.proxmox.com/en/"},
+            {"title":"VM template","url":"https://www.youtube.com/watch?v=MJgIm03Jxdo"},
+            {"Cluster": [
+              {"title": "Cluster nodes", "hover":"adding and removing nodes", "url":"https://www.youtube.com/watch?v=xTpaCAq1ruM"},
+              {"title": "Creating cluster", "url": "https://www.youtube.com/watch?v=S_pp_nc5QuI"},
+              {"title": "HA cluster", "url": "https://www.youtube.com/watch?v=08b9DDJ_yf4"}
+            ]},
             {"QEMU" : [
               {"title": "QEMU", "url": "https://www.qemu.org/"}
             ]}

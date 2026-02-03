@@ -3,12 +3,10 @@ import os
 
 app = Flask(__name__, static_folder='.', static_url_path='')
 
-# Serve index.html at root
 @app.route('/')
 def root():
     return send_from_directory('.', 'index.html')
 
-# Serve any file in the directory
 @app.route('/<path:filename>')
 def serve_file(filename):
     if os.path.exists(filename):
