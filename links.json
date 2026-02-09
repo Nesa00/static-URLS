@@ -1,5 +1,8 @@
 {
 "URLS": {
+    "Fun" : [
+        {"title": "Useles Web", "url": "https://theuselessweb.com/"}
+    ],
     "AI" : [
         {"title": "Chat GPT", "url": "https://chatgpt.com/"},
         {"title": "Gemini", "url": "https://gemini.google.com/app/ec07d62290e9dd58"},
@@ -9,6 +12,13 @@
         {"title": "Claude", "url": "https://claude.ai/"}
       ],
     "IT": {
+      "Security" : {
+        "Web" : [
+          {"title": "Virustotal", "url": "https://www.virustotal.com/gui/home/upload"},
+          {"title": "Urlvoid", "url":"https://www.urlvoid.com/whois-lookup/"},
+          {"title":"Check Short Url", "url": "https://checkshorturl.com/"}
+        ]
+      },
       "Operating Systems": {
         "Windows": {
           "PowerShell" : [
@@ -114,42 +124,43 @@
         ]
       },
       "Picture": [
-        { "title": "Convertio", "hover": "Picture format converter" , "url": "https://convertio.co/png-ico/" },
-        { "title": "Random photo", "url": "https://picsum.photos/" },
-        { "title": "Remove BG", "url": "https://www.remove.bg/" },
-        { "title": "Picture analysis", "url": "https://exifdata.com/index.php" },
-        { "title": "Image Editor", "url": "https://www.iloveimg.com/" },
-        { "title": "Color inverter", "url": "https://pinetools.com/invert-image-colors" }
+        {"title": "Convertio", "hover": "Picture format converter" , "url": "https://convertio.co/png-ico/" },
+        {"title": "Random photo", "url": "https://picsum.photos/" },
+        {"title": "Remove BG", "url": "https://www.remove.bg/" },
+        {"title": "Picture analysis", "url": "https://exifdata.com/index.php" },
+        {"title": "Image Editor", "url": "https://www.iloveimg.com/" },
+        {"title": "Color inverter", "url": "https://pinetools.com/invert-image-colors" }
       ],
       "Color": [
-        { "title": "HTML Color codes","url": "https://htmlcolorcodes.com/" },
-        { "title": "Color picker","url": "https://imagecolorpicker.com/" },
-        { "title": "Color contrast test","url": "https://coolors.co/contrast-checker/cbcbcb-000000" }
+        {"title": "HTML Color codes","url": "https://htmlcolorcodes.com/" },
+        {"title": "Color picker","url": "https://imagecolorpicker.com/" },
+        {"title": "Color contrast test","url": "https://coolors.co/contrast-checker/cbcbcb-000000" }
       ],
       "Multi": [
-        { "title": "Multi editor", "url": "https://photo333.com/" },
-        { "title": "Image to excel", "url": "https://jpgtoexcel.com/" },
-        { "title": "Pinetools", "url": "https://pinetools.com" },
-        { "title": "Patorjk", "url": "https://patorjk.com" },
-        { "title": "Useles Web", "url": "https://theuselessweb.com/" }
+        {"title": "Multi editor", "url": "https://photo333.com/" },
+        {"title": "Image to excel", "url": "https://jpgtoexcel.com/" },
+        {"title": "Pinetools", "url": "https://pinetools.com" },
+        {"title": "Patorjk", "url": "https://patorjk.com" },
+        {"title": "Tiny Url", "url": "https://tinyurl.com/"},
+        {"title": "Pastebin", "url":"https://pastebin.com/"}
       ],
       "3D Modeling": [
-        { "title": "3D model viewer", "url": "https://3dviewer.net/" },
-        { "title": "3D model converter", "url": "https://anyconv.com/stl-to-obj-converter/" },
-        { "title": "Tinkercad", "hover": "Tinkercad - 3D model editor", "url": "https://www.tinkercad.com/" },
-        { "title": "Onshape", "url": "https://www.onshape.com/" },
-        { "title": "Thingiverse","hover":"3D model market" , "url": "https://www.thingiverse.com/" },
-        { "title": "Printables","hover":"3D model market" , "url": "https://www.printables.com/" },
-        { "title": "cults3d","hover":"3D model market" , "url": "https://cults3d.com/" }
+        {"title": "3D model viewer", "url": "https://3dviewer.net/" },
+        {"title": "3D model converter", "url": "https://anyconv.com/stl-to-obj-converter/" },
+        {"title": "Tinkercad", "hover": "Tinkercad - 3D model editor", "url": "https://www.tinkercad.com/" },
+        {"title": "Onshape", "url": "https://www.onshape.com/" },
+        {"title": "Thingiverse","hover":"3D model market" , "url": "https://www.thingiverse.com/" },
+        {"title": "Printables","hover":"3D model market" , "url": "https://www.printables.com/" },
+        {"title": "cults3d","hover":"3D model market" , "url": "https://cults3d.com/" }
       ],
       "Diagram": [
-        { "title": "Draw.io", "url": "https://app.diagrams.net/" },
-        { "title": "Lucidchart", "url": "https://www.lucidchart.com/pages/" },
-        { "title": "Mindmeister", "url": "https://www.mindmeister.com/" },
-        { "title": "Mindomo", "url": "https://www.mindomo.com/" },
-        { "title": "Mind42", "url": "https://mind42.com/" },
-        { "title": "Coggle", "url": "https://coggle.it/" },
-        { "title": "Mermaid", "url": "https://mermaid.live/" }
+        {"title": "Draw.io", "url": "https://app.diagrams.net/" },
+        {"title": "Lucidchart", "url": "https://www.lucidchart.com/pages/" },
+        {"title": "Mindmeister", "url": "https://www.mindmeister.com/" },
+        {"title": "Mindomo", "url": "https://www.mindomo.com/" },
+        {"title": "Mind42", "url": "https://mind42.com/" },
+        {"title": "Coggle", "url": "https://coggle.it/" },
+        {"title": "Mermaid", "url": "https://mermaid.live/" }
       ]
     }
   }
