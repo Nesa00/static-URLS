@@ -95,7 +95,8 @@
         {"Git repositories": {
           "proxmox-scripts" : [
             {"title": "Proxmox community scripts", "url": "https://community-scripts.github.io/ProxmoxVE/"},
-            {"title": "Proxmox scripts collection", "url": "https://tteck.github.io/Proxmox/"}
+            {"title": "Proxmox scripts collection", "url": "https://tteck.github.io/Proxmox/"},
+            {"title": "Proxmox Admin", "url": "https://corsinvest.it/cv4pve-admin-proxmox/"}
           ],
           "Textual User Interface": [
             {"title": "TUIS", "hover": "Some tui aplications", "url": "https://github.com/rothgar/awesome-tuis?tab=readme-ov-file#file-managers"},
