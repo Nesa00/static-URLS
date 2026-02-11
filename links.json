@@ -142,7 +142,8 @@
         {"title": "Pinetools", "url": "https://pinetools.com" },
         {"title": "Patorjk", "url": "https://patorjk.com" },
         {"title": "Tiny Url", "url": "https://tinyurl.com/"},
-        {"title": "Pastebin", "url":"https://pastebin.com/"}
+        {"title": "Pastebin", "url":"https://pastebin.com/"},
+        {"title": "Open Maps", "url":"https://www.openstreetmap.org/#map=2/37.6/9.5&layers=P"}
       ],
       "3D Modeling": [
         {"title": "3D model viewer", "url": "https://3dviewer.net/" },
