@@ -16,7 +16,8 @@
         "Web" : [
           {"title": "Virustotal", "url": "https://www.virustotal.com/gui/home/upload"},
           {"title": "Urlvoid", "url":"https://www.urlvoid.com/whois-lookup/"},
-          {"title":"Check Short Url", "url": "https://checkshorturl.com/"}
+          {"title":"Check Short Url", "url": "https://checkshorturl.com/"},
+          {"title":"Abuse IP", "url": "https://www.abuseipdb.com/"}
         ]
       },
       "Operating Systems": {
