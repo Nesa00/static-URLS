@@ -102,6 +102,11 @@
           "Textual User Interface": [
             {"title": "TUIS", "hover": "Some tui aplications", "url": "https://github.com/rothgar/awesome-tuis?tab=readme-ov-file#file-managers"},
             {"title": "python tui", "url":"https://github.com/Textualize/textual#"}
+          ],
+          "IT tools": [
+            {"title": "Original", "url": "https://it-tools.tech/"},
+            {"title": "Some improvement", "url": "https://github.com/pluwen/tools"},
+            {"title": "Much better version", "url":"https://sharevb-it-tools.vercel.app/"}
           ]
         }
       }]
