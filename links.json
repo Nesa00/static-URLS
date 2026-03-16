@@ -107,6 +107,9 @@
             {"title": "Original", "url": "https://it-tools.tech/"},
             {"title": "Some improvement", "url": "https://github.com/pluwen/tools"},
             {"title": "Much better version", "url":"https://sharevb-it-tools.vercel.app/"}
+          ],
+          "Self Host apps": [
+              {"title": "Apps", "url": "https://github.com/awesome-selfhosted"}
           ]
         }
       }]
